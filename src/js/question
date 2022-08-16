@@ -1,0 +1,59 @@
+First-Class Function:
+A programming language is said to have First-class functions if functions in that language are treated like other variables. So the functions can be assigned to any other variable or passed as an argument or can be returned by another function. JavaScript treat function as a first-class-citizens. This means that functions are simply a value and are just another type of object.
+
+Anonymous Function:
+In JavaScript, an anonymous function is that type of function that has no name or we can say which is without any name. When we create an anonymous function, it is declared without any identifier. It is the difference between a normal function and an anonymous function.
+
+Call Back function:
+A callback is a function passed as an argument to another function
+
+This technique allows a function to call another function
+
+A callback function can run after another function has finished
+
+Highouder function
+In Javascript, functions can be assigned to variables in the same way that strings or arrays can. They can be passed into other functions as parameters or returned from them as well. A “higher-order function” is a function that accepts functions as parameters and/or returns a function.
+
+Pure function:
+A Pure Function is a function (a block of code) that always returns the same result if the same arguments are passed. It does not depend on any state or data change during a program's execution. Rather, it only depends on its input arguments.
+ex:
+function calculateGST( productPrice ) {
+return productPrice _ 0.05;
+}
+not pure function ex:
+var tax = 20;
+function calculateGST( productPrice ) {
+return productPrice _ (tax / 100) + productPrice;
+}
+
+Function Statement:
+The function statement declares a function. A declared function is "saved for later use", and will be executed later, when it is invoked (called)
+function a() {
+console.log();
+}
+Function Expression:
+A function expression is very similar to and has almost the same syntax as a function declaration (see function statement for details). The main difference between a function expression and a function declaration is the function name, which can be omitted in function expressions to create anonymous functions.
+
+var a = function () {
+console.log(a);
+}
+
+// difference b/w function statment and function express
+// then are different on hoisting
+function statment during the mamory creation assign the memory
+but function expression only assign the memory then its come to excution of program
+
+A function statement loads before any code is executed. This behavior of function statements is called hoisting, which allows a function to be used before it is defined.
+alert(foo()); // Alerts "hello from foo".
+function foo() { return "hello from foo"; }
+
+A function expression associates a value with a variable, just like any other assignment statement. function expressions load only when the interpreter reaches the definition of the function.
+
+alert(foo()); // ERROR!
+var foo = function() { return "hello from foo"; }
+
+Function Declaration:
+
+var a = function xyz () {
+console.log(a);
+}
