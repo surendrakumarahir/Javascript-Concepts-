@@ -1,23 +1,23 @@
 class Node {
-    constructor(value) {
-        this.value = value;
-        this.left = null;
-        this.right = null;
-    }
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
 }
 
 //   a
 //  /  \
 //  b   c
-// / \   \ 
+// / \   \
 // d  e    f
 
-const a = new Node('a');
-const b = new Node('b')
-const c = new Node('c')
-const d = new Node('d')
-const e = new Node('e')
-const f = new Node('f')
+const a = new Node("a");
+const b = new Node("b");
+const c = new Node("c");
+const d = new Node("d");
+const e = new Node("e");
+const f = new Node("f");
 
 a.left = b;
 a.right = c;
@@ -44,18 +44,11 @@ c.right = f;
 
 // console.log(depthfirstSearch(a))
 
-
 const depthfirstSearchRecursion = (root) => {
-    if(root === null) return []
-    const leftValue = depthfirstSearchRecursion(root.left);
-    const rightValue = depthfirstSearchRecursion(root.right)
-    return [root, ...leftValue, ...rightValue]
-}
+  if (root === null) return [];
+  const leftValue = depthfirstSearchRecursion(root.left);
+  const rightValue = depthfirstSearchRecursion(root.right);
+  return [root, ...leftValue, ...rightValue];
+};
 
-console.log("depth first search recursion", depthfirstSearchRecursion(a))
-
-
-
-
-
-
+console.log("depth first search recursion", depthfirstSearchRecursion(a));

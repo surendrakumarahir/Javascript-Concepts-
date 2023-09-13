@@ -8,12 +8,11 @@
 
 // abc();
 
-
 // you can pass funciton in funaciton as well
 
 // function abc() {
 //     var a = 10;
-    
+
 //     aabc();
 // }
 
@@ -21,7 +20,7 @@
 //     console.log(a);
 //  });
 
- // most important
+// most important
 
 //  function abc() {
 //     var a = 10;
@@ -35,7 +34,6 @@
 // console.log(z); // nut just function , but funtion with laxical stop
 // z(); // mantain laxical stop
 
-
 // expamples
 // function x() {
 //     var i = 1;
@@ -47,23 +45,22 @@
 //    }
 //    x();
 
-   // second using closure
+// second using closure
 
-//    function x() {
-//     var i = 1;
-//     for(let i=1; i <=10; i++) {
-//         function close(i) {
-//             setTimeout(() => {
-//                 console.log(i);
-//             }, i*1000)
-//         }
-//         close(i);
+// function x() {
+//  var i = 1;
+//  for(let i=1; i <=10; i++) {
+//      function close(i) {
+//          setTimeout(() => {
+//              console.log(i);
+//          }, i*1000)
 //      }
-//    }
-//    x();
+//      close(i);
+//   }
+// }
+// x();
 
-
-// hide data from outer funciton // encapsulate data to function 
+// hide data from outer funciton // encapsulate data to function
 
 // function counter() {
 //     var count = 0;
@@ -84,19 +81,18 @@
 // use constrution for increase count and decrese
 
 function Counter() {
-    var count = 0;
-     this.increse =  function() {
-         count++;
-        console.log(count);
-     }
-     this.decrease =  function() {
-        count--;
-       console.log(count);
-    }
+  var count = 0;
+  this.increse = function () {
+    count++;
+    console.log(count);
+  };
+  this.decrease = function () {
+    count--;
+    console.log(count);
+  };
 }
 
 let counter1 = new Counter();
 
 counter1.increse();
 counter1.decrease();
-

@@ -1,21 +1,10 @@
+const socket = new WebSocket("ws://localhost:4000")
 
+// Listen for messages from the server
+socket.addEventListener("message", (event) => {
+  console.log(`Server says: ${event.data}`)
+})
 
-
-const P1 = new Promise((resolve) => {
-    console.log(1);
-    resolve(25);
-    })
-    
-    console.log(2);
-    
-    setTimeout(() => {
-        console.log(3);
-    } , 0)
-    
-    P1.then(() => {
-    console.log(4);
-    });
-    
-    console.log(5);
-
-    //2, 5, 1, 4, 3
+console.log("working")
+// Send a message to the server
+socket.send("Hello, server!")

@@ -1,0 +1,59 @@
+import { FC, useEffect, useState } from 'react';
+//import axios from 'axios';
+
+import './style.css';
+type CardProps = {
+  name: string;
+  number: number;
+  code?: number;
+  id: number;
+  type?: string;
+};
+
+export const App: FC<{ name: string }> = ({ name }) => {
+  const [data, setData] = useState<CardProps | null>();
+
+  useEffect(() => {
+    console.log('working');
+    // async function fetchData() {
+    //   const data = await fetch(
+    //     'https://mocki.io/v1/50abfd24-2845-4dd7-bcce-9bd732e25c47'
+    //   );
+    //   console.log(data);
+    // }
+    // fetchData();
+  }, []);
+
+  return <div>hiii</div>;
+};
+
+
+
+
+type CardProps = {
+    name: string,
+    number: number,
+    code?: number,
+    id: number,
+    type?: string
+  }
+  const Card = (props: CardProps) => {
+     return <div key={props.id}>
+          <div>
+             <span>Name: </span> {props.name}
+             <span>Number: </span> {props.number}
+          </div>
+          {
+            props.code && <div>
+                <span>Code: </span> {props.code}
+            </div>
+          }
+          {
+            props.type && <div>
+                <span>Type: </span> {props.type}
+            </div>
+          }
+     </div>
+  }
+  
+  export default Card;

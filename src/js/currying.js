@@ -19,7 +19,6 @@
 
 // multiple(2)(3);
 
-
 // using bind
 
 // let multiple = function (x, y) {
@@ -28,7 +27,6 @@
 
 // let multiplyByTwo = multiple.bind(this, 2);
 // multiplyByTwo(2);
-
 
 // function log(date, importance, message) {
 //     console.log(`[${date.getHours()}:${date.getMinutes()}] [${importance}] ${message}`);
@@ -54,74 +52,66 @@
 
 // let debugNow = logNow("DEBUG");
 
-// debugNow("message"); 
-
-
-
+// debugNow("message");
 
 // function log(date, type, message) {
 //     console.log(`${date.getHours()}: ${date.getMinutes()} ${type} ${message}`)
-// }  
+// }
 
 function log(date) {
-   return  function (type) {
-       return  function (message) {
-              console.log(`${date.getHours()}: ${date.getMinutes()} ${type} ${message}`)
-           }  
-        }  
-}  
+  return function (type) {
+    return function (message) {
+      console.log(
+        `${date.getHours()}: ${date.getMinutes()} ${type} ${message}`
+      );
+    };
+  };
+}
 
 log(new Date())("BUG")("fount bug");
 
-let nowLog = log(new Date);
+let nowLog = log(new Date());
 
 nowLog("BUG")("new bug");
 
 let logBugNow = nowLog("Bug");
 logBugNow("log bug now");
 
-
-
 ///
 //first solution
 // function sum(a) {
-  
-//      return function (b) {
-//          if(!b) {
-//              return  a;
-//          } else {
-//               return sum(a+b);
-//          }
-        
-//      }
-//  }
+//   return function (b) {
+//     if (!b) {
+//       return a;
+//     } else {
+//       return sum(a + b);
+//     }
+//   };
+// }
 
-//  sum(1)(2)(3)
+// sum(1)(2)(3)();
 
 //second solution which is best
 
 function currying() {
   // console.log("arg", [...arguments]);
-   const arg = [...arguments];
+  const arg = [...arguments];
 
-    function addReturn() {
-          const arg2 = [...arguments];
-         // if(arg2.length > 0 ) {
-            return currying(...arg, ...arg2)
-         //  } else {
-         //   return arg;
-         //  }
-         
-   }
- let total =  arg.reduce((acc, item) => {
-      return acc+item
- }, 0)
- addReturn.value = total;
- return addReturn;
-   
- 
+  function addReturn() {
+    const arg2 = [...arguments];
+    // if(arg2.length > 0 ) {
+    return currying(...arg, ...arg2);
+    //  } else {
+    //   return arg;
+    //  }
+  }
+  let total = arg.reduce((acc, item) => {
+    return acc + item;
+  }, 0);
+  addReturn.value = total;
+  return addReturn;
 }
 
 console.log(currying(1, 2, 3, 4, 5));
-console.log(currying(1)(2)(4,5).value);
+console.log(currying(1)(2)(4, 5).value);
 console.log(currying(1)(2)(4)(5).value);

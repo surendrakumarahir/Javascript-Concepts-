@@ -22,7 +22,6 @@
 
 // console.log(test.myApply({firstName: 'surendra'}, [1, 2, 33]));
 
-
 // Function.prototype.myBind = function(obj, ...args) {
 //     if(typeof this !== 'function') {
 //         throw new Error("should be an function")
@@ -36,20 +35,19 @@
 // const bindDAta = test.myBind({firstName: 'surendra'}, 1, 2)
 // console.log(bindDAta(4));
 
-
 // Array.prototype.myForEach = function(cb) {
 //    for(let i=0; i < this.length; i++) {
 //       cb(this[i], i, this)
 //    }
 // }
 
- const arrData = [2, 3, 4, 5, 6];
+const arrData = [2, 3, 4, 5, 6];
 
 // arrData.myForEach((item, i, arr) => {
 //     console.log(item, i , arr);
 // })
 
-// Map 
+// Map
 
 // Array.prototype.customMap = function(cb) {
 //     let result = [];
@@ -63,7 +61,7 @@
 //     return item*2
 //  }))
 
-//Filter 
+//Filter
 
 // Array.prototype.customFilter = function(cb) {
 //     let result = [];
@@ -79,7 +77,6 @@
 //     return item === 3 || item === 6
 //  }))
 
-
 // Find
 
 // Array.prototype.customFind = function(cb) {
@@ -92,9 +89,8 @@
 //  }
 
 //  console.log(arrData.customFind((item, i, arr) => {
-//     return item === 3 
+//     return item === 3
 //  }))
-
 
 // Reduce function
 // Array.prototype.customReduce = function(cb, acc) {
@@ -105,7 +101,7 @@
 //         } else {
 //             accumulator =  cb(accumulator, this[i], i, this)
 //         }
-     
+
 //     }
 //     return accumulator
 //  }
@@ -114,7 +110,6 @@
 //     console.log(acc, item)
 //     return acc+item
 //  }))
-
 
 // promise
 
@@ -179,24 +174,57 @@
 //         console.log(value)
 //   })
 
+// Array.prototype.myFilter = function(cb) {
+//    let array = [];
+//    for(let i=0; i < this.length; i++) {
+//     if( cb(this[i], i , this))  {
+//       return   array.push(this[i])
+//     }
+//     }
 
+//    return array;
 
-Array.prototype.myFilter = function(cb) {
-   let array = [];
-   for(let i=0; i < this.length; i++) {
-    if( cb(this[i], i , this))  {
-      return   array.push(this[i])
-    }
-    }
-   
-   return array;
+// }
 
-}
+// let arr = [1, 3, 4]
 
-let arr = [1, 3, 4]
+// console.log(arr.myFilter((item, i , ar) => {
+//      return item==3;
+// }))
 
-console.log(arr.myFilter((item, i , ar) => {
-     return item==3;
-}))
+// function addCurrring(a) {
+//   return function (b) {
+//     if (!b) {
+//       return a;
+//     } else {
+//       return addCurrring(a + b);
+//     }
+//   };
+// }
 
+// console.log(addCurrring(2)(4)(4)());
 
+// const cals = {
+//   total: 0,
+//   add: function (a) {
+//     this.total += a;
+//     return this;
+//   },
+//   multiply: function (a) {
+//     this.total *= a;
+//     return this;
+//   },
+//   subtract: function (a) {
+//     this.total -= a;
+//     return this;
+//   },
+// };
+// const result = cals.add(2).multiply(3).subtract(2).add(4);
+// console.log("result", result);
+
+// extend tree on cleck on each one
+// function data(test) {
+//   console.log("wokring");
+// }
+
+//obj[]
